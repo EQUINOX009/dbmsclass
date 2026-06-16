@@ -37,6 +37,10 @@ select ename, empno, designation
 from employee
 where designation='manager' OR designation= 'analyst';
 
+SELECT *
+FROM EMPLOYEE
+WHERE DESIGNATION IN ('Director', 'Receptionist');
+
 select ename, salary
 from employee
 where salary between 12000 AND 20000;
@@ -44,3 +48,29 @@ where salary between 12000 AND 20000;
 select ename, salary
 from employee
 where salary < 10000 OR salary > 15000;
+
+Select distinct designation from employee;
+
+select ename from employee
+where ename LIKE 'R%';
+
+select ename from employee
+where ename LIKE '%m';
+
+select ename from employee
+where ename LIKE 'H%i';
+
+select ename from employee
+where ename like 'R__';
+
+select ename from employee
+order by ename asc;
+
+SELECT ENAME,
+       SALARY * 1.20 AS UPDATED_SALARY
+FROM EMPLOYEE;
+
+SELECT ENAME,
+       COMM * 1.20 AS UPDATED_COMM
+FROM EMPLOYEE;
+
