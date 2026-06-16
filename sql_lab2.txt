@@ -1,0 +1,46 @@
+CREATE DATABASE Bernhardt;
+
+USE Bernhardt;
+show tables;
+
+CREATE TABLE EMPLOYEE (
+    EMPNO INT(4),
+    ENAME VARCHAR(20),
+    DESIGNATION VARCHAR(25),
+    HIREDATE DATE,
+    SALARY INT(10),
+    COMM DECIMAL(10,2),
+    DEPTNO INT(4)
+);
+
+INSERT INTO EMPLOYEE
+VALUES
+(1011, 'Ram', 'Manager', '1995-01-01', 20000, 800.00, 100),
+(1021, 'Hari', 'Accountant', '1999-04-04', 15000, 650.00, 200),
+(1456, 'Shyam', 'Clerk', '1995-07-03', 12000, 500.00, 300),
+(1045, 'Sita', 'Analyst', '1998-10-06', 18000, 700.00, 400),
+(1099, 'Ramesh', 'Clerk', '1996-01-01', 10000, 400.00, 300),
+(1060, 'Hari', 'Clerk', '1997-10-25', 10000, 400.00, 300);
+
+select* from employee;
+SELECT ENAME, DESIGNATION, SALARY
+FROM EMPLOYEE;
+
+select ename
+from employee
+where designation='clerk';
+select ename
+from employee
+where designation='clerk' && deptno=300;
+
+select ename, empno, designation
+from employee
+where designation='manager' OR designation= 'analyst';
+
+select ename, salary
+from employee
+where salary between 12000 AND 20000;
+
+select ename, salary
+from employee
+where salary < 10000 OR salary > 15000;
